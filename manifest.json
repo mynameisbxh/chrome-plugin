@@ -3,20 +3,37 @@
     "name": "helloworld",
     "version": "0.0.1",
     "description": "学习chrome插件开发",
-    "browser_action": {
-        "default_popup": "index.html",
-        "default_icon": "assets/img/icon-48.png"
+    "permissions": [
+        "storage",
+        "declarativeContent",
+        "activeTab"
+    ],
+    "background": {
+        "scripts": [
+            "assets/js/background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "views/popup.html",
+        "default_icon": {
+            "16": "assets/img/icon-48.png",
+            "32": "assets/img/icon-48.png",
+            "48": "assets/img/icon-48.png",
+            "128": "assets/img/icon-128.png"
+        }
     },
     "icons": {
-        "16": "assets/img/icon-48.png",
-        "48": "assets/img/icon-48.png",
-        "128": "assets/img/icon-128.png"
+        "16": "assets/img/get_started128.png",
+        "32": "assets/img/get_started128.png",
+        "48": "assets/img/get_started128.png",
+        "128": "assets/img/get_started128.png"
     },
     "commands": {
         "_execute_browser_action": {
             "suggested_key": {
-                "default": "Ctrl+E",
-                "mac": "MacCtrl+E"
+                "default": "Ctrl+Shift+E",
+                "mac": "MacCtrl+Shift+E"
             },
             "description": "Opens hello.html"
         }
